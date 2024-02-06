@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //set the minimum and the maximum
+        const minNum = 0;
+        const maxNum = 101;
+       //set the scop of the random number between minNum and maxNum
+        const answer = Math.floor(Math.random() * (maxNum - minNum));
+        //creat a variable to hold the number of trying 
+        let tryguess = 0;
+        //set the number that user guess
+        let guess;
+         //make the game continuous
+        let running = true;
+         //loop for the game
+        while (running) {
+           //show the window to the user to entar the number
+            guess = window.prompt('guess a number between 1 and 100');
+            //give the number type to the value
+            guess = Number(guess);
+            //condition see if the user enter number
+            if (isNaN(guess)) {
+           //message to the user 
+                window.alert("Error please enter number !!");
+            //condition see the number if the guess between 1 and 100
+        } else if (guess < minNum || guess > maxNum) {
+             //message to the user 
+                window.alert("Please entar number between 1 and 100 !! ");
+            } else {
+             //give the user new chance
+                tryguess++;
+             //if the user guess the number low then the answer
+                if (guess < answer) {
+            //message to the user
+                    window.alert("Your answer is low try againg !! ");
+            //if the user guess the number high then the answer
+                } else if (guess > answer) {
+            //message to the user
+                    window.alert(" Your answer is high try againg !!");
+            //if the user guess the right number  
+                } else {
+             //message to the user
+                    window.alert(" you get it !!! the answer was " + answer +
+                        " it took you " + tryguess + " guesses");
+          //make the game stop
+                    running = false;
+
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
